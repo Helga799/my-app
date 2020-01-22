@@ -1,0 +1,20 @@
+
+<!--<button class="btn btn-primary" type="button" (click)="callServiceMethod()">Print</button>-->
+
+<h1 xmlns="http://www.w3.org/1999/html">Breweries</h1>
+
+<ul *ngIf="brews.length !== 0">
+  <li *ngFor="let brew of brews; let i = index">
+    <p class="name">#{{i + 1}}. <strong>Name: </strong>{{brew.name}}</p>
+    <p class="country">
+      <strong>Country: </strong>{{brew.country }}, <strong>City: </strong>{{ brew.city }}
+    </p>
+    <p class="street"><strong>Street: </strong>{{brew.street}}</p>
+    <p>
+      <strong>Website: </strong>
+      <a href="{{ brew.website_url }}" target="_blank" class="site">Link</a>
+    </p>
+  </li>
+</ul>
+
+<h1 *ngIf="brews.length === 0">We don't have a beer</h1>

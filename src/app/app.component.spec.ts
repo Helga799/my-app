@@ -16,20 +16,56 @@ describe('AppComponent', () => {
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
+    const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
   it(`should have as title 'my-app'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('my-app');
+    const app = fixture.componentInstance;
+    expect(app.title).toEqual('My-App');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('my-app app is running!');
+    expect(compiled.querySelector('.logo').textContent).toContain('CoolApp');
+  });
+
+  describe('test sum() function', () => {
+    it('should summarize positive numbers correctly', () => {
+      const fixture = TestBed.createComponent(AppComponent);
+      const app = fixture.componentInstance;
+      const result = app.sum(5, 6);
+      expect(result).toBe(11);
+    });
+    it('should summarize negative numbers correctly', () => {
+      const fixture = TestBed.createComponent(AppComponent);
+      const app = fixture.componentInstance;
+      const result = app.sum(-12, -5);
+      expect(result).toBe(-17);
+    });
+    it('should summarize negative numbers correctly', () => {
+      const fixture = TestBed.createComponent(AppComponent);
+      const app = fixture.componentInstance;
+      const result = app.sum(105, 7);
+      expect(result).toBe(112);
+    });
+  });
+
+  describe('test substract() function', () => {
+    it('should substract positive numbers correctly', () => {
+      const fixture = TestBed.createComponent(AppComponent);
+      const app = fixture.componentInstance;
+      const result = app.substract(5, 6);
+      expect(result).toBe(-1);
+    });
+    it('should substract negative numbers correctly', () => {
+      const fixture = TestBed.createComponent(AppComponent);
+      const app = fixture.componentInstance;
+      const result = app.substract(-12, -5);
+      expect(result).toBe(-7);
+    });
   });
 });

@@ -7,5 +7,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   // Title
-  // title = 'my-app';
+  title = 'My-App';
+
+  public sum(a = 10, b = -1) {
+    this.consoleLog(a, b);
+    return a + b;
+  }
+
+  public substract(a, b) {
+    this.consoleLog(a, b);
+    return a - b;
+  }
+
+  private consoleLog(a, b) {
+    console.log(a);
+    console.log(b);
+  }
 }
